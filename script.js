@@ -5,6 +5,12 @@ let questionP = document.querySelector('.question');
 let answerSpans = document.querySelectorAll('.answer span');
 let scoreSpan = document.querySelector('#score');
 
+//Global variables
+let questionNumber = 0;
+let score = 0;
+let pos1, pos2, pos3, pos4; //These will randomize 
+
+//Array of questions and answers
 let questions = [
     {
         question: "What javascript function takes an array and returns a single value?",
@@ -16,7 +22,7 @@ let questions = [
     },
     {
         question: "What is a javascript function to turn a string into an array?",
-        answer: ["split()", "filter()", "map()", "reduce()"]
+        answer: ["split()", "filter()", "map()", "some()"]
     },
     {
         question: "What javascript function can return part of a string?",
@@ -26,54 +32,31 @@ let questions = [
         question: "What javascript function can change each item of an array and returns a new array?",
         answer: ["map()", "slice()", "split()", "reduce()"]
     }
-
 ];
 
-//Global variables
-let questionNumber = 0;
-let score = 0;
-let pos1, pos2, pos3, pos4; //These will randomize 
-
+//Display first question
 shuffleAnswers();
-
 changeQuestion();
 
 submitButton.addEventListener('click', function(e){
 
-    if(questions[0].answer[0] == answerInputs[0].nextElementSibling.innerHTML && answerInputs[0].checked == true){
-        //console.log('You picked the correct answer');
-    } else{
-        //console.log("Wrong answer");
-    }
-
-    //notify that quiz is complete
+    //check if quiz is complete and notify that it is.
     if(questionNumber == questions.length-1){
         alert('quiz complete');
     }
-
-    //Alerts the user if no answer has been chosen
+    //Alerts user if no answer has been chosen or else continues.
     if(answerInputs[0].checked == false && answerInputs[1].checked == false && answerInputs[2].checked == false && answerInputs[3].checked == false){
         alert("Please pick an answer");
     } else{
-
         updateScore();
-    
-        //display the next question and answers
         questionNumber++;
-
-        //score
-        console.log(`${score} out of ${questionNumber}`);
-
         resetQuiz();
-
         shuffleAnswers();
-
         changeQuestion();
      } 
 });
 
 //shuffles the position values.
-//TODO: Shorten this code.
 function shuffleAnswers(){
         pos1 = Math.floor(Math.random() * 4);
         pos2 = Math.floor(Math.random() * 4);
@@ -116,15 +99,14 @@ function resetQuiz(){
 function updateScore(){
     for(let i=0; i<4; i++){
         if(answerInputs[i].checked == true && answerInputs[i].nextElementSibling.innerHTML == questions[questionNumber].answer[0]){
-            //console.log('Correct!');
             score++;
-        } else{
-           // console.log('Wrong');
         }
-        //this is the correct answer
-        console.log(questions[questionNumber].answer[0]);
     }
     scoreSpan.innerHTML = `${score} / ${questionNumber +1}`;
 };
+
+function checkQuizCompleted(){
+
+}
 
 
