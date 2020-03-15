@@ -50,11 +50,18 @@ body {
   width: 80vw;
   max-width: 1000px;
   overflow: scroll;
+  -webkit-box-shadow: 0 0 4px 0;
+          box-shadow: 0 0 4px 0;
+  -ms-overflow-style: none;
 }
 
 #quiz h1 {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+#quiz::-webkit-scrollbar {
+  display: none;
 }
 
 .container-1 {
