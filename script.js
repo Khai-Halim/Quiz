@@ -3,6 +3,7 @@ let submitButton = document.querySelector('.btn>button');
 let answerInputs = document.querySelectorAll('.answer input')
 let questionP = document.querySelector('.question');
 let answerSpans = document.querySelectorAll('.answer span');
+let scoreSpan = document.querySelector('#score');
 
 let questions = [
     {
@@ -20,81 +21,60 @@ let questions = [
     {
         question: "What javascript function can return part of a string?",
         answer: ["slice()", "toUpperCase()", "split()", "indexOf()"]
+    },
+    {
+        question: "What javascript function can change each item of an array and returns a new array?",
+        answer: ["map()", "slice()", "split()", "reduce()"]
     }
+
 ];
 
 //Global variables
 let questionNumber = 0;
-let correctAmount;
-let wrongAmount;
+let score = 0;
 let pos1, pos2, pos3, pos4; //These will randomize 
 
-//Randomize pos variables
-shuffle();
+shuffleAnswers();
 
-//Initiates first question and answers
-questionP.innerHTML = questions[0].question;
-answerSpans[0].innerHTML = questions[0].answer[pos1];
-answerSpans[1].innerHTML = questions[0].answer[pos2];
-answerSpans[2].innerHTML = questions[0].answer[pos3];
-answerSpans[3].innerHTML = questions[0].answer[pos4];
+changeQuestion();
 
 submitButton.addEventListener('click', function(e){
 
-    //TODO check if selected radio button sibling span has the same innerText as the correct answer which I have placed in first position of array.
-    // if(answerInputs[0].checked.nextElementSibling == true){
-    //     console.log('right answer!');
-    //     console.log(e.target);
-    //  } else{
-    //      console.log('wrong answer');
-    //  }
-
-    //TODO: increase score if correct and increase wrong answer amount if incorrect.
-
-    //notify that quiz is complete
-    if(questionNumber == 3){
-        alert('quiz complete');
+    if(questions[0].answer[0] == answerInputs[0].nextElementSibling.innerHTML && answerInputs[0].checked == true){
+        //console.log('You picked the correct answer');
+    } else{
+        //console.log("Wrong answer");
     }
 
-    //check if answer is correct or wrong
-    console.log("For the question " + questions[questionNumber].question + " The right answer was: " + questions[questionNumber].answer[0]);
+    //notify that quiz is complete
+    if(questionNumber == questions.length-1){
+        alert('quiz complete');
+    }
 
     //Alerts the user if no answer has been chosen
     if(answerInputs[0].checked == false && answerInputs[1].checked == false && answerInputs[2].checked == false && answerInputs[3].checked == false){
         alert("Please pick an answer");
     } else{
+
+        updateScore();
+    
         //display the next question and answers
         questionNumber++;
 
-            //Resets the questions
-        if(questionNumber >= questions.length){
-            questionNumber = 0;
-        }
+        //score
+        console.log(`${score} out of ${questionNumber}`);
 
-        console.log(questionNumber);
+        resetQuiz();
 
-        //Randomize answer positions
-        shuffle();
+        shuffleAnswers();
 
-        //initiate new question 
-        questionP.innerHTML = questions[questionNumber].question;
-
-        //instantiates new answers
-        answerSpans[0].innerHTML = questions[questionNumber].answer[pos1];
-        answerSpans[1].innerHTML = questions[questionNumber].answer[pos2];
-        answerSpans[2].innerHTML = questions[questionNumber].answer[pos3];
-        answerSpans[3].innerHTML = questions[questionNumber].answer[pos4];
-
-        //uncheck the radio buttons
-        for(let i=0; i<answerInputs.length; i++){
-            answerInputs[i].checked = false;
-        }
+        changeQuestion();
      } 
 });
 
 //shuffles the position values.
 //TODO: Shorten this code.
-function shuffle(){
+function shuffleAnswers(){
         pos1 = Math.floor(Math.random() * 4);
         pos2 = Math.floor(Math.random() * 4);
         while(pos2 == pos1){
@@ -111,5 +91,40 @@ function shuffle(){
     
 };
 
+function changeQuestion(){
+    //initiate new question 
+    questionP.innerHTML = questions[questionNumber].question;
+    //instantiates new answers
+    answerSpans[0].innerHTML = questions[questionNumber].answer[pos1];
+    answerSpans[1].innerHTML = questions[questionNumber].answer[pos2];
+    answerSpans[2].innerHTML = questions[questionNumber].answer[pos3];
+    answerSpans[3].innerHTML = questions[questionNumber].answer[pos4];
+    //uncheck the radio buttons
+    for(let i=0; i<answerInputs.length; i++){
+        answerInputs[i].checked = false;
+    }
+};
+
+function resetQuiz(){
+ //Resets the questions
+ if(questionNumber >= questions.length){
+    questionNumber = 0;
+    score = 0;
+}
+};
+
+function updateScore(){
+    for(let i=0; i<4; i++){
+        if(answerInputs[i].checked == true && answerInputs[i].nextElementSibling.innerHTML == questions[questionNumber].answer[0]){
+            //console.log('Correct!');
+            score++;
+        } else{
+           // console.log('Wrong');
+        }
+        //this is the correct answer
+        console.log(questions[questionNumber].answer[0]);
+    }
+    scoreSpan.innerHTML = `${score} / ${questionNumber +1}`;
+};
 
 
