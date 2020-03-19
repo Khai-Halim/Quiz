@@ -60,6 +60,11 @@ body {
   margin-bottom: 1rem;
 }
 
+#quiz h2 {
+  text-align: center;
+  font-weight: normal;
+}
+
 #quiz::-webkit-scrollbar {
   display: none;
 }
