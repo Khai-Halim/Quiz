@@ -41,11 +41,11 @@ let questions = [
         answer: ["toUpperCase()", "upperCase()", "charAt()", "every()"]
     },
     {
-        question: "What string function takes a string and an index from where to search left to right as arguments and returns the index of that string or returns -1 if not found?",
+        question: "What string/array function takes a string and an index from where to search left to right as arguments and returns the index of that string or returns -1 if not found?",
         answer: ["indexOf()", "filter()", "split()", "length"]
     },
     {
-        question: "What string function takes a string as an argument and returns the index of the last occurance",
+        question: "What string/array function takes a string as an argument and returns the index of the last occurance",
         answer: ["lastIndexOf", "indexOf()", "endIndex()", "toLastIndex()"]
     },
     {
@@ -57,7 +57,7 @@ let questions = [
         answer: ["match()", "search()", "indexOf()", "Array.from()"]
     },
     {
-        question: "What string function turns cuts a string and returns the sliced parts into an array? The argument decides where to cut",
+        question: "What string function cuts a string and returns the sliced parts into an array? The argument decides where to cut?",
         answer: ["split()", "slice()", "splice()", "dice()"]
     },
     {
@@ -65,7 +65,7 @@ let questions = [
         answer: ["includes()", "contains()", "split()", "length"]
     },
     {
-        question: "What function takes a string as an argument and checks if the that string exists at the start of a string",
+        question: "What function takes a string as an argument and checks if the that string exists at the start of a string?",
         answer: ["startsWith()", "beginsWith()", "split()", "some()"]
     },
     {
@@ -73,8 +73,68 @@ let questions = [
         answer: ["endsWith()", "lastWord()", "lastIndexOf()", "reduce()"]
     },
     {
-        question: "What function counts the amount of index's a string or an array contains and returns that number",
+        question: "What function counts the amount of index's a string or an array contains and returns that number?",
         answer: ["length", "count()", "endsWith()", "map()"]
+    },
+    {
+        question: "What array function can do something for each item of an array an even change an item in an array and returns a new array?",
+        answer: ["map()", "forEach()", "change()", "filter()"]
+    },
+    {
+        question: "What array function returns a new array which contains only the items that pass the given condition?",
+        answer: ["filter()", "map()", "reduce()", "forEach()"]
+    },
+    {
+        question: "What array function takes the first value of an array and changes it depending on the other values of the array and how they are said to affect it? It returns a single value?",
+        answer: ["reduce()", "filter()", "split()", "length"]
+    },
+    {
+        question: "What array function takes the last value of an array and changes it depending on the other values of the array and how they are said to affect it? It returns a single value?",
+        answer: ["reduceRight()", "replace()", "split()", "some()"]
+    },
+    {
+        question: "What array function runs given code for each item in an array?",
+        answer: ["forEach()", "slice()", "split()", "reduce()"]
+    },
+    {
+        question: "What array function returns true or false depending on whether or not all items in the array pass the said condition?",
+        answer: ["every()", "lowerCase()", "toUpperCase()", "changeCase()"]
+    },
+    {
+        question: "What array function returns true or false depending on whether or not at least one item in the array pass the said condition?",
+        answer: ["some()", "upperCase()", "charAt()", "every()"]
+    },
+    {
+        question: "What function joins two arrays together and returns an array",
+        answer: ["concat()", "filter()", "split()", "length"]
+    },
+    {
+        question: "What array function takes a string/number as an argument and returns that value if it exists in the array.",
+        answer: ["find()", "match()", "check()", "search()"]
+    },
+    {
+        question: "What array function turns an array into a string? The argument decides what to put between each item.",
+        answer: ["join()", "search()", "indexOf()", "reduce()"]
+    },
+    {
+        question: "What array function can cut out part of an array and even insert an item in an array. The original array is affected and will be missing the part that was cut.",
+        answer: ["splice()", "slice()", "cut()", "chop()"]
+    },
+    {
+        question: "What array function reverses all items in the array and actually changes the original array.",
+        answer: ["reverse()", "slice()", "splice()", "backwards()"]
+    },
+    {
+        question: "What array function sorts an array in a said order such as lowest to highest or alphabetically? It changes the original array",
+        answer: ["sort()", "order()", "split()", "change()"]
+    },
+    {
+        question: "What function can change a set, node list or HTML collection into an array",
+        answer: ["Array.from()", "beginsWith()", "split()", "some()"]
+    },
+    {
+        question: "What function can change an array or a number into a string",
+        answer: ["toString()", "lastWord()", "lastIndexOf()", "reduce()"]
     }
 ];
 
