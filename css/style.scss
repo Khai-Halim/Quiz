@@ -13,6 +13,8 @@ body{
     width: 100vw;
 }
 
+@import 'classes';
+
 .question{
     font-size: 1rem;
     padding: 20px 0;
@@ -31,7 +33,6 @@ body{
     span{
         margin-left: 0.2rem;
     }
-    
 }
 
 #quiz{
@@ -89,3 +90,5 @@ body{
         
     }
 }
+
+@import 'start';

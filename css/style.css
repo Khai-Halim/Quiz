@@ -20,6 +20,18 @@ body {
   width: 100vw;
 }
 
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .question {
   font-size: 1rem;
   padding: 20px 0;
@@ -106,5 +118,28 @@ body {
 .score {
   display: block;
   padding: 8px 0;
+}
+
+#start {
+  height: 85%;
+}
+
+#start a {
+  display: block;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 30px;
+  background: #4a55f8;
+  text-decoration: none;
+  -webkit-transition: 350ms background, 350ms color;
+  transition: 350ms background, 350ms color;
+}
+
+#start a:hover {
+  cursor: pointer;
+  background: blue;
+  color: #f3f3f3;
 }
 /*# sourceMappingURL=style.css.map */

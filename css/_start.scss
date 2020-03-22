@@ -1,0 +1,19 @@
+#start{
+    height: 85%;
+        a{
+            display: block;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 10px 30px;
+            background: rgb(74, 85, 248);
+            text-decoration: none;
+            transition: 350ms background, 350ms color;
+            &:hover{
+                cursor: pointer;
+                background: blue;
+                color: #f3f3f3;
+            }
+    }
+}
