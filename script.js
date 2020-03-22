@@ -46,11 +46,11 @@ let questions = [
     },
     {
         question: "What string/array function takes a string as an argument and returns the index of the last occurance",
-        answer: ["lastIndexOf", "indexOf()", "endIndex()", "toLastIndex()"]
+        answer: ["lastIndexOf()", "indexOf()", "endIndex()", "toLastIndex()"]
     },
     {
         question: "What string function takes a string or regular expression as an argument and returns the index of that string or returns -1 if not found.",
-        answer: ["search", "find()", "indexOf()", "reduce()"]
+        answer: ["search()", "find()", "indexOf()", "reduce()"]
     },
     {
         question: "What string function takes a string as an argument and returns all instances of that string in an array?",
@@ -74,10 +74,10 @@ let questions = [
     },
     {
         question: "What function counts the amount of index's a string or an array contains and returns that number?",
-        answer: ["length", "count()", "endsWith()", "map()"]
+        answer: ["length", "count()", "length()", "map()"]
     },
     {
-        question: "What array function can do something for each item of an array an even change an item in an array and returns a new array?",
+        question: "What array function can do something for each item of an array and even change an item in an array and returns a new array?",
         answer: ["map()", "forEach()", "change()", "filter()"]
     },
     {
