@@ -146,7 +146,8 @@ submitButton.addEventListener('click', function(e){
 
     //check if quiz is complete and notify that it is.
     if(questionNumber == questions.length-1){
-        alert('quiz complete');
+        alert(`quiz complete. You scored: ${ Math.round(score / questionNumber * 100)}%`);
+
     }
     //Alerts user if no answer has been chosen or else continues.
     if(answerInputs[0].checked == false && answerInputs[1].checked == false && answerInputs[2].checked == false && answerInputs[3].checked == false){
@@ -210,7 +211,7 @@ function updateScore(){
 };
 
 function checkQuizCompleted(){
-
+    //TODO: display score and decide if passed or failed. Automatically go back to the start page.
 }
 
 
